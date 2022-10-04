@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AllTypes",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/DoublePair"
+    },
+    {
+      "$ref": "#/definitions/Pair"
+    },
+    {
+      "$ref": "#/definitions/Any"
+    }
+  ],
+  "definitions": {
+    "DoublePair": {
+      "type": "object",
+      "required": [
+        "first",
+        "second"
+      ],
+      "properties": {
+        "first": {
+          "$ref": "#/definitions/Pair"
+        },
+        "second": {
+          "$ref": "#/definitions/Pair"
+        }
+      }
+    },
+    "Pair": {
+      "type": "array",
+      "items": [
+        {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2
+    },
+    "Any": true
+  }
+}
