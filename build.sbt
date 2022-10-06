@@ -1,4 +1,4 @@
-name := "json-schema-compatibility-checker"
+name := "jsonschemacompat"
 organization := "me.daniyar"
 organizationName := "Daniyar Itegulov"
 version := "0.1.0"
@@ -13,4 +13,6 @@ libraryDependencies ++= Seq(
 
 // Native packager
 enablePlugins(JavaAppPackaging)
-maintainer := "Daniyar Itegulov"
+maintainer := "Daniyar Itegulov <ditegulov@gmail.com>"
+packageSummary := "A micro-tool for checking JSON Schema compatibility"
+Debian / name := "jsonschemacompat"
