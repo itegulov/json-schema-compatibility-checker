@@ -1,6 +1,8 @@
-import org.scalatest._
-import flatspec._
-import matchers._
+package me.daniyar
+
+import org.scalatest.*
+import org.scalatest.flatspec.*
+import org.scalatest.matchers.*
 
 import java.nio.file.Path
 

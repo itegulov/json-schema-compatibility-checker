@@ -1,8 +1,10 @@
+package me.daniyar
+
 import io.confluent.kafka.schemaregistry.json.JsonSchema
 
 import java.nio.file.{Files, Path}
-import scala.util.CommandLineParser
 import scala.jdk.CollectionConverters.*
+import scala.util.CommandLineParser
 
 given scala.util.CommandLineParser.FromString[Path] with
   def fromString(s: String): Path =
