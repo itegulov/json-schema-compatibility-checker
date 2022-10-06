@@ -10,7 +10,6 @@ given scala.util.CommandLineParser.FromString[Path] with
   def fromString(s: String): Path =
     Path.of(s)
 
-@main
 def checkCompatibility(prevSchemaPath: Path, nextSchemaPath: Path): Int =
   val prevSchema = new JsonSchema(Files.readString(prevSchemaPath))
   val nextSchema = new JsonSchema(Files.readString(nextSchemaPath))
@@ -22,3 +21,7 @@ def checkCompatibility(prevSchemaPath: Path, nextSchemaPath: Path): Int =
     println("The schemas are NOT backwards compatible:")
     println(errorMessages.asScala.mkString("\n"))
     1
+
+@main
+def main(prevSchemaPath: Path, nextSchemaPath: Path): Unit =
+  System.exit(checkCompatibility(prevSchemaPath, nextSchemaPath))
